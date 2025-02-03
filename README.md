@@ -41,15 +41,12 @@ pip install -r requirements.txt
 ```
 
 ### Running the Project  
-1. **Train the Model (if needed)**  
+
+1. **Run the Flask App**  
    ```bash
-   python main.py
+   python app.py
    ```
-2. **Run the Flask App**  
-   ```bash
-   python ap.py
-   ```
-3. Open **http://127.0.0.1:5000/** in your browser to access the UI.  
+2. Open **http://127.0.0.1:5000/** in your browser to access the UI.  
 
 ## Usage  
 - **Train a new model**: Option to train a fresh ML model.  
