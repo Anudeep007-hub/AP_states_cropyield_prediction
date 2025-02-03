@@ -18,7 +18,7 @@ This project predicts **crop yield (tonnes/hectare) for 12 unique crops** across
 ## Dataset  
 - Data collected from **2013-2022** across Andhra Pradesh districts.  
 - Features include **Crop Type, District, Season, Area, Annual Rainfall, Fertilizer Usage, and Temperature**.  
-- Preprocessed dataset available in [ML_DataPreProcessing Repository](https://github.com/Anudeep007-hub/ML_DataPreProcessing.git).  
+- Preprocessed dataset available in [ML_DataPreProcessing Repository](https://github.com/Anudeep007-hub/ML_DataPreProcessing).  
 
 ## Project Structure  
 ```
