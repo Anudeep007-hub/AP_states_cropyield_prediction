@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Yield Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px 30px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 100%;
+        }
+        h2 {
+            text-align: center;
+            color: #333333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #555555;
+        }
+        select, input {
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #28a745;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Crop Yield Prediction</h2>
+        <form method="POST" action="/predict">
+            <label for="crop">Crop:</label>
+            <select name="crop" required>
+                <option value="" disabled selected>Select a crop</option>
+                <option value="bajra">Bajra</option>
+                <option value="cotton">Cotton</option>
+                <option value="groundnut">Groundnut</option>
+                <option value="maize">Maize</option>
+                <option value="ragi">Ragi</option>
+                <option value="rice">Rice</option>
+                <option value="turmeric">Turmeric</option>
+                <option value="castor_seed">Castor Seed</option>
+                <option value="gram">Gram</option>
+                <option value="moong(green_gram)">Moong</option>
+                <option value="safflower">Safflower</option>
+                <option value="sunflower">Sunflower</option>
+            </select>
+
+
+            <label for="district">District:</label>
+            <select name="district" required>
+                <option value="" disabled selected>Select a district</option>
+                <option value="anantapur">Anantapur</option>
+                <option value="chittoor">Chittoor</option>
+                <option value="east_godavari">East godavari</option>
+                <option value="guntur">Guntur</option>
+                <option value="kadapa">Kadapa</option>
+                <option value="krishna">Krishna</option>
+                <option value="kurnool">Kurnool</option>
+                <option value="prakasam">Prakasam</option>
+                <option value="spsr_nellore">Spsr nellore</option>
+                <option value="srikakulam">Srikakulam</option>
+                <option value="visakhapatanam">Visakhapatanam</option>
+                <option value="vizianagaram">Vizianagaram</option>
+                <option value="west_godavari">West godavari</option>
+            </select>
+
+            <label for="season">Season:</label>
+            <select name="season" required>
+                <option value="" disabled selected>Select a season</option>
+                <option value="kharif">Kharif</option>
+                <option value="rabi">Rabi</option>
+            </select>
+
+            <label for="area">Area (Hectare):</label>
+            <input type="number" step="any" name="area" required placeholder="Enter area in hectares">
+
+            <label for="annual_temp">Annual Temperature (°C):</label>
+            <input type="number" step="any" name="annual_temp" required placeholder="Enter temperature in °C">
+
+            <label for="fertilizer">Fertilizer (KG per Hectare):</label>
+            <input type="number" step="any" name="fertilizer" required placeholder="Enter fertilizer in KG/ha">
+
+            <label for="rainfall">Annual Rainfall (mm):</label>
+            <input type="number" step="any" name="rainfall" required placeholder="Enter rainfall in mm">
+
+            <button type="submit">Predict Yield</button>
+        </form>
+
+        {% if prediction %}
+        <div class="result">
+            Predicted Crop Yield: <strong>{{ prediction }} Tonne/Hectare</strong>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
